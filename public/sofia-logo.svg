@@ -1,0 +1,32 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mark — origin at (11, 40), viewBox scaled 1.2x from 40x40 -->
+  <g transform="scale(1.2) translate(0, 0)">
+    <!-- Outer arc -->
+    <path d="M 9 33 C 8 18, 20 8, 34 9" stroke="#E63946" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.32"/>
+    <!-- Middle arc -->
+    <path d="M 9 33 C 8 22, 20 14, 30 16" stroke="#E63946" stroke-width="2.0" stroke-linecap="round" fill="none" opacity="0.62"/>
+    <!-- Inner arc -->
+    <path d="M 9 33 C 9 25, 19 19, 26 22" stroke="#E63946" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <!-- Origin dot -->
+    <circle cx="9" cy="33" r="1.9" fill="#E63946"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="52"
+    y="34"
+    font-family="'Instrument Serif', Georgia, serif"
+    font-style="italic"
+    font-size="30"
+    fill="#1A1A1B"
+    letter-spacing="-0.6"
+  >Sofia</text>
+  <text
+    x="53"
+    y="44"
+    font-family="'Satoshi', Arial, sans-serif"
+    font-size="7"
+    fill="rgba(26,26,27,0.38)"
+    letter-spacing="0.7"
+  >BY LOBSTER TECHNOLOGIES</text>
+</svg>

@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Design Tokens ───────────────────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-background: #FCFCFA;
+  --color-foreground: #1A1A1B;
+  --color-primary:    #E63946;
+  --color-secondary:  #EEF5F0;
+  --color-accent:     #F4F4F1;
+
+  /* Typography */
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans:  "Satoshi", system-ui, sans-serif;
+
+  /* Generous spacing scale */
+  --spacing-18:  4.5rem;
+  --spacing-22:  5.5rem;
+  --spacing-26:  6.5rem;
+  --spacing-30:  7.5rem;
+  --spacing-34:  8.5rem;
+  --spacing-38:  9.5rem;
+  --spacing-42:  10.5rem;
+  --spacing-46:  11.5rem;
+  --spacing-50:  12.5rem;
+  --spacing-56:  14rem;
+  --spacing-64:  16rem;
+  --spacing-72:  18rem;
+  --spacing-80:  20rem;
+  --spacing-96:  24rem;
+  --spacing-112: 28rem;
+  --spacing-128: 32rem;
+
+  /* Line heights */
+  --leading-tighter:   1.05;
+  --leading-editorial: 1.15;
+
+  /* Letter spacing */
+  --tracking-editorial: -0.03em;
+  --tracking-wide-xs:    0.08em;
+  --tracking-wide-sm:    0.12em;
+
+  /* Border radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+
+  /* Shadows — ultra-subtle editorial feel */
+  --shadow-soft: 0 2px 20px 0 rgba(26, 26, 27, 0.06);
+  --shadow-card: 0 4px 40px 0 rgba(26, 26, 27, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  background-color: #FCFCFA;
+  color: #1A1A1B;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FCFCFA;
+  color: #1A1A1B;
+  font-family: "Satoshi", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Lock background — ignore OS dark mode */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #FCFCFA;
+    color: #1A1A1B;
+  }
+}
+
+/* ─── Reduced Motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── GPU layer hints for heavy transforms ────────────────────────────────── */
+.will-change-transform {
+  will-change: transform;
 }

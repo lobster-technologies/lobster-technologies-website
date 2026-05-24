@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-family);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+
+  /* Lobster Technologies Blue Design System */
+  --background: #FFFFFF;
+  --foreground: #1D1D1F;
+  --card: #FFFFFF;
+  --card-foreground: #1D1D1F;
+  --popover: #FFFFFF;
+  --popover-foreground: #1D1D1F;
+  --primary: #1A3A6B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F5F7;
+  --secondary-foreground: #1D1D1F;
+  --muted: #F5F5F7;
+  --muted-foreground: #6E6E73;
+  --accent: #EEEEFF;
+  --accent-foreground: #1A3A6B;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E8E8ED;
+  --input: #E8E8ED;
+  --ring: #1A3A6B;
+
+  /* Custom brand tokens */
+  --brand-navy: #09152E;
+  --brand-blue-900: #0D1F47;
+  --brand-blue-700: #1A3A6B;
+  --brand-blue-500: #2563EB;
+  --brand-blue-400: #3B82F6;
+  --brand-blue-200: #BFDBFE;
+  --brand-blue-50: #EFF6FF;
+  --ink: #1D1D1F;
+  --carbon: #09152E;
+  --surface-dark: #0F1F40;
+  --mist: #F5F5F7;
+  --rule: #E8E8ED;
+  --slate: #6E6E73;
+  --muted-color: #AEAEB2;
+  --live-green: #1A9E6A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: #1D1D1F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-dark {
+  background: rgba(13, 31, 71, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-blue {
+  background: rgba(26, 58, 107, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Gradient backgrounds */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(26, 58, 107, 0.9) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(37, 99, 235, 0.3) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(9, 21, 46, 0.8) 0%, transparent 55%),
+    linear-gradient(180deg, #09152E 0%, #0D1F47 40%, #1A3A6B 100%);
+  min-height: 100vh;
+}
+
+.dark-section {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, #09152E 0%, #0D1F47 100%);
+}

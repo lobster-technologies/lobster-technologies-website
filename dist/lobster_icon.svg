@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <!-- Body -->
+  <ellipse cx="60" cy="80" rx="12" ry="20" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <!-- Head -->
+  <ellipse cx="60" cy="55" rx="10" ry="12" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <!-- Antennae -->
+  <path d="M53 46 Q40 30 30 20" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M67 46 Q80 30 90 20" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Left claw -->
+  <path d="M50 62 Q30 50 20 55 Q15 65 25 70 Q35 75 50 70" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <path d="M20 55 Q18 48 25 48 Q32 48 30 55" stroke="#93C5FD" stroke-width="1.5" fill="none"/>
+  <!-- Right claw -->
+  <path d="M70 62 Q90 50 100 55 Q105 65 95 70 Q85 75 70 70" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <path d="M100 55 Q102 48 95 48 Q88 48 90 55" stroke="#93C5FD" stroke-width="1.5" fill="none"/>
+  <!-- Abdomen segments -->
+  <ellipse cx="60" cy="95" rx="10" ry="7" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <ellipse cx="60" cy="108" rx="8" ry="6" stroke="#BFDBFE" stroke-width="2" fill="none"/>
+  <!-- Tail fan -->
+  <path d="M52 114 Q48 125 44 128" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M56 115 Q54 127 53 132" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M60 115 Q60 128 60 133" stroke="#BFDBFE" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M64 115 Q66 127 67 132" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M68 114 Q72 125 76 128" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="55" cy="50" r="2" fill="#3B82F6"/>
+  <circle cx="65" cy="50" r="2" fill="#3B82F6"/>
+  <!-- Legs -->
+  <path d="M50 72 Q44 78 42 85" stroke="#93C5FD" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M52 76 Q46 82 44 89" stroke="#93C5FD" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M70 72 Q76 78 78 85" stroke="#93C5FD" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M68 76 Q74 82 76 89" stroke="#93C5FD" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- Central line -->
+  <line x1="60" y1="46" x2="60" y2="115" stroke="#60A5FA" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.5"/>
+</svg>

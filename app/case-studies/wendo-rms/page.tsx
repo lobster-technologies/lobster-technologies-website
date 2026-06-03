@@ -426,10 +426,10 @@ export default function WendoCaseStudy() {
                 }}
               >
                 <span style={{ color: "var(--accent)", fontSize: "1.2em" }}>&ldquo;</span>
-                Before Lobster, I had to call my managers to know what was happening
-                at each branch. Now I open my phone and I can see everything — orders,
-                revenue, stock — across all three locations at once. It changed how I
-                run the business.
+                Lobster took the time to understand exactly how we operate —
+                then built a system around it. Managing our branches is a
+                different experience now. Every decision we make is backed
+                by real-time data, right at our fingertips.
                 <span style={{ color: "var(--accent)", fontSize: "1.2em" }}>&rdquo;</span>
               </blockquote>
             </Reveal>
@@ -438,17 +438,17 @@ export default function WendoCaseStudy() {
                 <div
                   style={{
                     width: 52, height: 52, borderRadius: "50%",
-                    background: "var(--accent)", color: "white",
+                    background: "var(--surface-3)", border: "1px solid var(--border)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 16, fontWeight: 500, flexShrink: 0,
+                    fontSize: 22, flexShrink: 0,
                   }}
                 >
-                  GK
+                  ☕
                 </div>
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 500, color: "var(--ink)" }}>Gideon Kamau</div>
+                  <div style={{ fontSize: 15, fontWeight: 500, color: "var(--ink)" }}>Director</div>
                   <div style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 3 }}>
-                    Co-owner, Wendo Coffee Bistro · Nyeri, Kenya
+                    Wendo Coffee Bistro · Nyeri, Kenya
                   </div>
                 </div>
               </div>

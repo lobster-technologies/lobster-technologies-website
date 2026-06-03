@@ -27,7 +27,7 @@ export default function FeaturedProject() {
           <div>
             <Reveal>
               <div style={{ fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--ink-4)", marginBottom: 32 }}>
-                Client Story — Wendo Coffee Bistro, Nyeri
+                Client Story — Wendo Coffee Bistro · Nyeri, Kenya
               </div>
             </Reveal>
 
@@ -43,8 +43,10 @@ export default function FeaturedProject() {
                 }}
               >
                 <span style={{ color: "var(--accent)" }}>&ldquo;</span>
-                We went from running two branches manually to managing three —
-                and the owner sees everything from his phone.
+                Lobster took the time to understand exactly how we operate —
+                then built a system around it. Managing our branches is a
+                different experience now. Every decision we make is backed
+                by real-time data, right at our fingertips.
                 <span style={{ color: "var(--accent)" }}>&rdquo;</span>
               </blockquote>
             </Reveal>
@@ -54,16 +56,16 @@ export default function FeaturedProject() {
                 <div
                   style={{
                     width: 44, height: 44, borderRadius: "50%",
-                    background: "var(--accent)", color: "white",
+                    background: "var(--surface-3)", border: "1px solid var(--border)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 15, fontWeight: 500, flexShrink: 0,
+                    fontSize: 18, flexShrink: 0,
                   }}
                 >
-                  GK
+                  ☕
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 500, color: "var(--ink)" }}>Gideon Kamau</div>
-                  <div style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 2 }}>Co-owner, Wendo Coffee Bistro</div>
+                  <div style={{ fontSize: 14, fontWeight: 500, color: "var(--ink)" }}>Director</div>
+                  <div style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 2 }}>Wendo Coffee Bistro · Nyeri, Kenya</div>
                 </div>
               </div>
             </Reveal>

@@ -1,25 +1,29 @@
 import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 import Hero from "@/components/sections/Hero";
-import PainSection from "@/components/sections/PainSection";
-import SolutionSection from "@/components/sections/SolutionSection";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import Testimonials from "@/components/sections/Testimonials";
-import WaitlistCTA from "@/components/sections/WaitlistCTA";
-import FAQ from "@/components/sections/FAQ";
-import Footer from "@/components/sections/Footer";
+import ProofBar from "@/components/sections/ProofBar";
+import Problem from "@/components/sections/Problem";
+import HowWeWork from "@/components/sections/HowWeWork";
+import Capabilities from "@/components/sections/Capabilities";
+import FeaturedProject from "@/components/sections/FeaturedProject";
+import WhyLobster from "@/components/sections/WhyLobster";
+import CTASection from "@/components/sections/CTASection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex-1">
+    <>
       <Navbar />
-      <Hero />
-      <PainSection />
-      <SolutionSection />
-      <FeaturesSection />
-      <Testimonials />
-      <WaitlistCTA />
-      <FAQ />
+      <main>
+        <Hero />
+        <ProofBar />
+        <Problem />
+        <HowWeWork />
+        <Capabilities />
+        <FeaturedProject />
+        <WhyLobster />
+        <CTASection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

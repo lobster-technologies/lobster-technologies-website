@@ -1,105 +1,192 @@
 "use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+const LobsterMark = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <path d="M12 2C8.5 2 6 5 6 8c0 2 1 3.5 2.5 5L12 22l3.5-9C17 11.5 18 10 18 8c0-3-2.5-6-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
+  </svg>
+);
+
+const ArrowRight = () => (
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <path d="M3 8h10M8 3l5 5-5 5" />
+  </svg>
+);
 
 export default function Navbar() {
-  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
-  // As user scrolls 0→60px: background opacity 0.72→0.97, border opacity 0.08→0.14, blur stays
-  const bgOpacity = useTransform(scrollY, [0, 60], [0.72, 0.97]);
-  const borderOpacity = useTransform(scrollY, [0, 60], [0.06, 0.14]);
-  const shadowOpacity = useTransform(scrollY, [0, 60], [0.04, 0.10]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const navLinks = [
+    { href: "/about", label: "About" },
+    { href: "/case-studies", label: "Case Studies" },
+  ];
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50"
-    >
-      <div className="mx-auto max-w-6xl px-8 lg:px-16 py-4">
-        <motion.div
-          className="flex items-center justify-between rounded-2xl px-6 py-3"
+    <>
+      <nav
+        style={{
+          position: "fixed",
+          top: 0, left: 0, right: 0,
+          zIndex: 100,
+          height: "var(--nav-h)",
+          background: "rgba(255,255,255,0.88)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderBottom: "1px solid var(--border)",
+          transition: "box-shadow 0.3s",
+          boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.06)" : "none",
+        }}
+      >
+        <div
           style={{
-            backgroundColor: useTransform(
-              bgOpacity,
-              (v) => `rgba(252, 252, 250, ${v})`
-            ),
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            border: useTransform(
-              borderOpacity,
-              (v) => `1px solid rgba(26, 26, 27, ${v})`
-            ),
-            boxShadow: useTransform(
-              shadowOpacity,
-              (v) => `0 2px 20px rgba(26, 26, 27, ${v})`
-            ),
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            maxWidth: "var(--max)",
+            margin: "0 auto",
+            padding: "0 32px",
+            height: "100%",
           }}
         >
           {/* Logo */}
-          <div className="flex items-center gap-0.5">
-            {/* Signal arc mark — three curved arcs suggesting broadcast + lobster claw */}
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden
-            >
-              <path d="M 9 33 C 8 18, 20 8, 34 9" stroke="#E63946" strokeWidth="1.4" strokeLinecap="round" fill="none" opacity="0.32"/>
-              <path d="M 9 33 C 8 22, 20 14, 30 16" stroke="#E63946" strokeWidth="2.0" strokeLinecap="round" fill="none" opacity="0.62"/>
-              <path d="M 9 33 C 9 25, 19 19, 26 22" stroke="#E63946" strokeWidth="2.6" strokeLinecap="round" fill="none"/>
-              <circle cx="9" cy="33" r="1.9" fill="#E63946"/>
-            </svg>
-
-            {/* Wordmark */}
-            <div className="flex flex-col" style={{ gap: 0, lineHeight: 1 }}>
-              <span
-                style={{
-                  fontFamily: '"Instrument Serif", Georgia, serif',
-                  fontStyle: "italic",
-                  fontSize: "1.15rem",
-                  color: "#1A1A1B",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.1,
-                }}
-              >
-                Sofia
-              </span>
-              <span
-                style={{
-                  fontFamily: "Satoshi, sans-serif",
-                  fontSize: "0.58rem",
-                  color: "rgba(26,26,27,0.38)",
-                  letterSpacing: "0.07em",
-                  textTransform: "uppercase",
-                  lineHeight: 1.2,
-                }}
-              >
-                by Lobster Technologies
-              </span>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <motion.a
-            href="#waitlist"
-            whileHover={{ opacity: 0.85 }}
-            whileTap={{ opacity: 0.7 }}
-            className="text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+          <Link
+            href="/"
             style={{
-              background: "#1A1A1B",
-              color: "#FCFCFA",
-              fontFamily: "Satoshi, sans-serif",
-              letterSpacing: "-0.01em",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              textDecoration: "none",
+              color: "var(--ink)",
             }}
           >
-            Join Waitlist
-          </motion.a>
-        </motion.div>
-      </div>
-    </motion.header>
+            <div
+              style={{
+                width: 36, height: 36,
+                background: "var(--ink)",
+                borderRadius: 10,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0,
+              }}
+            >
+              <LobsterMark />
+            </div>
+            <div style={{ lineHeight: 1.1 }}>
+              <div style={{ fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em" }}>
+                Lobster Technologies
+              </div>
+              <div style={{ fontSize: 10, fontWeight: 400, color: "var(--ink-3)", letterSpacing: "0.02em", textTransform: "uppercase" }}>
+                Nairobi, Kenya
+              </div>
+            </div>
+          </Link>
+
+          {/* Desktop nav */}
+          <ul
+            style={{ display: "flex", alignItems: "center", gap: 32, listStyle: "none", margin: 0, padding: 0 }}
+            className="nav-desktop"
+          >
+            {navLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 400,
+                    color: pathname === href ? "var(--ink)" : "var(--ink-2)",
+                    textDecoration: "none",
+                    transition: "color 0.2s",
+                  }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <Link href="/#contact" className="btn-dark" style={{ fontSize: 14, padding: "10px 22px" }}>
+              Work with us
+              <ArrowRight />
+            </Link>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              className="nav-mobile-btn"
+              style={{
+                background: "none", border: "none", cursor: "pointer",
+                padding: 4, display: "none",
+              }}
+            >
+              {mobileOpen ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div
+          style={{
+            position: "fixed", top: "var(--nav-h)", left: 0, right: 0, bottom: 0,
+            zIndex: 99,
+            background: "var(--surface)",
+            borderTop: "1px solid var(--border)",
+            padding: "32px 24px",
+            display: "flex", flexDirection: "column", gap: 8,
+          }}
+        >
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontSize: 22, fontWeight: 400,
+                color: "var(--ink)", textDecoration: "none",
+                padding: "12px 0",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          <div style={{ marginTop: 24 }}>
+            <Link href="/#contact" className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+              Work with us <ArrowRight />
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width: 900px) {
+          .nav-desktop { display: none !important; }
+          .nav-mobile-btn { display: flex !important; }
+        }
+      `}</style>
+    </>
   );
 }

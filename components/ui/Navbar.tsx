@@ -60,11 +60,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
             <Image
-              src="/LT-Primary horizontal logo.png"
+              src="/LT-Primary_horizontal_logo-removebg.png"
               alt="Lobster Technologies"
-              width={724}
-              height={543}
-              style={{ height: 36, width: "auto", display: "block" }}
+              width={577}
+              height={433}
+              style={{ height: 48, width: "auto", display: "block" }}
               priority
             />
           </Link>

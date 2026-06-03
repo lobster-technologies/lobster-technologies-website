@@ -18,15 +18,11 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: 16 }}>
               <Image
-                src="/LT-Monochrome dark logo.png"
+                src="/LT-Monochrome_white_logo-removebg.png"
                 alt="Lobster Technologies"
-                width={1536}
-                height={1024}
-                style={{
-                  height: 32, width: "auto", display: "block",
-                  mixBlendMode: "screen",
-                  opacity: 0.9,
-                }}
+                width={612}
+                height={408}
+                style={{ height: 44, width: "auto", display: "block", opacity: 0.92 }}
               />
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, fontWeight: 300, maxWidth: 240 }}>

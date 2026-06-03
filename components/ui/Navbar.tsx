@@ -1,13 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-const LobsterMark = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-    <path d="M12 2C8.5 2 6 5 6 8c0 2 1 3.5 2.5 5L12 22l3.5-9C17 11.5 18 10 18 8c0-3-2.5-6-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
-  </svg>
-);
 
 const ArrowRight = () => (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -63,35 +58,15 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-          <Link
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              textDecoration: "none",
-              color: "var(--ink)",
-            }}
-          >
-            <div
-              style={{
-                width: 36, height: 36,
-                background: "var(--ink)",
-                borderRadius: 10,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
-              }}
-            >
-              <LobsterMark />
-            </div>
-            <div style={{ lineHeight: 1.1 }}>
-              <div style={{ fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em" }}>
-                Lobster Technologies
-              </div>
-              <div style={{ fontSize: 10, fontWeight: 400, color: "var(--ink-3)", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-                Nairobi, Kenya
-              </div>
-            </div>
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
+            <Image
+              src="/LT-Primary horizontal logo.png"
+              alt="Lobster Technologies"
+              width={724}
+              height={543}
+              style={{ height: 36, width: "auto", display: "block" }}
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

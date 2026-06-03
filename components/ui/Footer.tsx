@@ -1,10 +1,5 @@
 import Link from "next/link";
-
-const LobsterMark = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-    <path d="M12 2C8.5 2 6 5 6 8c0 2 1 3.5 2.5 5L12 22l3.5-9C17 11.5 18 10 18 8c0-3-2.5-6-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
-  </svg>
-);
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -21,18 +16,18 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-              <div
+            <div style={{ marginBottom: 16 }}>
+              <Image
+                src="/LT-Monochrome dark logo.png"
+                alt="Lobster Technologies"
+                width={1536}
+                height={1024}
                 style={{
-                  width: 28, height: 28,
-                  background: "rgba(255,255,255,0.1)",
-                  borderRadius: 8,
-                  display: "flex", alignItems: "center", justifyContent: "center",
+                  height: 32, width: "auto", display: "block",
+                  mixBlendMode: "screen",
+                  opacity: 0.9,
                 }}
-              >
-                <LobsterMark />
-              </div>
-              <span style={{ fontSize: 16, fontWeight: 500 }}>Lobster Technologies</span>
+              />
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, fontWeight: 300, maxWidth: 240 }}>
               Custom software for growing businesses in Kenya. Built for the way this market actually works.

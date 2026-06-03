@@ -30,8 +30,9 @@ export const metadata: Metadata = {
     locale: "en_KE",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/LT-Structural L monogram.png",
+    shortcut: "/LT-Structural L monogram.png",
+    apple: "/LT-Structural L monogram.png",
   },
 };
 

@@ -64,7 +64,7 @@ export default function Navbar() {
               alt="Lobster Technologies"
               width={577}
               height={433}
-              style={{ height: 48, width: "auto", display: "block" }}
+              style={{ height: 62, width: "auto", display: "block" }}
               priority
             />
           </Link>

@@ -76,7 +76,7 @@ function MacBookMockup() {
         borderRadius: "14px 14px 0 0",
         padding: "10px 10px 0",
         border: "1px solid #383838",
-        boxShadow: "0 40px 100px rgba(0,0,0,0.20), 0 8px 24px rgba(0,0,0,0.10)",
+        boxShadow: "0 40px 100px rgba(0,0,0,0.26), 0 8px 28px rgba(0,0,0,0.14)",
       }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 18, marginBottom: 6 }}>
           <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#444", border: "1px solid #555" }} />
@@ -168,8 +168,8 @@ function MacBookMockup() {
 
 /* ── iPhone — proper proportions (190×412, ~2.17:1) ──────────── */
 function IPhoneMockup() {
-  const W = 190;
-  const R = 48; // border radius
+  const W = 220;
+  const R = 52; // border radius
 
   return (
     <div style={{
@@ -182,11 +182,11 @@ function IPhoneMockup() {
       flexShrink: 0,
     }}>
       {/* Volume buttons */}
-      <div style={{ position: "absolute", left: -4, top: 68,  width: 3, height: 28, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
-      <div style={{ position: "absolute", left: -4, top: 106, width: 3, height: 28, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
-      <div style={{ position: "absolute", left: -4, top: 144, width: 3, height: 28, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
+      <div style={{ position: "absolute", left: -4, top: 76,  width: 3.5, height: 30, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
+      <div style={{ position: "absolute", left: -4, top: 116, width: 3.5, height: 30, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
+      <div style={{ position: "absolute", left: -4, top: 156, width: 3.5, height: 30, background: "#3d3d3f", borderRadius: "2px 0 0 2px" }} />
       {/* Power button */}
-      <div style={{ position: "absolute", right: -4, top: 96, width: 3, height: 52, background: "#3d3d3f", borderRadius: "0 2px 2px 0" }} />
+      <div style={{ position: "absolute", right: -4, top: 108, width: 3.5, height: 58, background: "#3d3d3f", borderRadius: "0 2px 2px 0" }} />
 
       {/* Screen */}
       <div style={{ background: "#fff", borderRadius: R - 3, overflow: "hidden", margin: 3 }}>
@@ -343,26 +343,36 @@ export default function Hero() {
           {/* ── Free-floating mockups ── */}
           <div ref={addRef} className="reveal reveal-d2 hero-visual">
             {/*
-              Layout: MacBook sits center-right.
-              iPhone floats in front, bottom-left, overlapping MacBook.
-              Float card sits top-right, above everything.
-              No containing box — elements breathe freely with drop shadows.
+              Diagonal composition:
+              FloatCard  — top-left anchor, slight counter-clockwise tilt
+              MacBook    — center, slight counter-clockwise tilt, main element
+              iPhone     — bottom-right, clockwise tilt, overlaps MacBook corner
             */}
-            <div style={{ position: "relative", height: 520 }}>
+            <div style={{ position: "relative", height: 600 }}>
 
-              {/* MacBook — anchored top-right area */}
-              <div style={{ position: "absolute", top: 20, right: 0, zIndex: 2 }}>
+              {/* Float card — top-left, above all */}
+              <div style={{
+                position: "absolute", top: 0, left: 0, zIndex: 5,
+                transform: "rotate(-2deg)",
+                filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.13))",
+              }}>
+                <FloatCard />
+              </div>
+
+              {/* MacBook — anchored below-right of float card */}
+              <div style={{
+                position: "absolute", top: 60, left: 10, zIndex: 2,
+                transform: "rotate(-1.5deg)",
+              }}>
                 <MacBookMockup />
               </div>
 
-              {/* iPhone — bottom-left, in front */}
-              <div style={{ position: "absolute", bottom: 0, left: 0, zIndex: 4 }}>
+              {/* iPhone — bottom-right, overlaps MacBook lower-right corner */}
+              <div style={{
+                position: "absolute", bottom: 0, right: 0, zIndex: 4,
+                transform: "rotate(2.5deg)",
+              }}>
                 <IPhoneMockup />
-              </div>
-
-              {/* Insight card — floats top-left, above iPhone */}
-              <div style={{ position: "absolute", top: 0, left: 24, zIndex: 5 }}>
-                <FloatCard />
               </div>
 
             </div>

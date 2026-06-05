@@ -5,8 +5,70 @@ import Footer from "@/components/ui/Footer";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "Wendo RMS — Lobster Technologies",
-  description: "How Lobster Technologies built a custom restaurant management system for Wendo Coffee Bistro — taking them from manual operations to a live multi-branch system.",
+  title: "Wendo RMS — Restaurant Management System Case Study",
+  description:
+    "How Lobster Technologies built a custom restaurant management system for Wendo Coffee Bistro in Nyeri, Kenya — taking them from paper orders and manual M-Pesa reconciliation to three branches running live on one dashboard.",
+  alternates: {
+    canonical: "https://lobstertechnologies.co.ke/case-studies/wendo-rms",
+  },
+  openGraph: {
+    title: "Wendo RMS — From Manual Chaos to Three Branches on One Dashboard",
+    description:
+      "10,000+ orders processed. 3 branches synced in real time. 0 system failures. See how Lobster Technologies built Wendo Coffee Bistro's restaurant management system.",
+    url: "https://lobstertechnologies.co.ke/case-studies/wendo-rms",
+    type: "article",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Wendo RMS — Restaurant Management System by Lobster Technologies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wendo RMS — From Manual Chaos to Three Branches on One Dashboard",
+    description:
+      "10,000+ orders. 3 branches. 0 failures. See how Lobster Technologies built a custom restaurant management system for Wendo Coffee Bistro.",
+    images: ["/og-image.png"],
+  },
+};
+
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://lobstertechnologies.co.ke/case-studies/wendo-rms#article",
+      headline: "Wendo RMS — From Manual Chaos to Three Branches on One Dashboard",
+      description:
+        "How Lobster Technologies built a custom restaurant management system for Wendo Coffee Bistro in Nyeri, Kenya — taking them from paper orders and manual M-Pesa reconciliation to three branches running live on one dashboard.",
+      url: "https://lobstertechnologies.co.ke/case-studies/wendo-rms",
+      author: { "@id": "https://lobstertechnologies.co.ke/#organization" },
+      publisher: { "@id": "https://lobstertechnologies.co.ke/#organization" },
+      about: {
+        "@type": "LocalBusiness",
+        name: "Wendo Coffee Bistro",
+        description: "A growing café and restaurant chain based in Nyeri, Kenya.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Nyeri",
+          addressRegion: "Nyeri County",
+          addressCountry: "KE",
+        },
+      },
+      inLanguage: "en-KE",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://lobstertechnologies.co.ke" },
+        { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://lobstertechnologies.co.ke/case-studies" },
+        { "@type": "ListItem", position: 3, name: "Wendo RMS", item: "https://lobstertechnologies.co.ke/case-studies/wendo-rms" },
+      ],
+    },
+  ],
 };
 
 const ArrowRight = () => (
@@ -34,6 +96,10 @@ const results = [
 export default function WendoCaseStudy() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
+      />
       <Navbar />
       <main>
         {/* Back link */}

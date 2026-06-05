@@ -7,8 +7,33 @@ import Reveal from "@/components/ui/Reveal";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "About — Lobster Technologies",
-  description: "We exist to close the gap between how Kenyan businesses operate and what technology can do for them.",
+  title: "About",
+  description:
+    "Meet the team behind Lobster Technologies. We build custom software for growing businesses in Kenya, closing the gap between how companies operate today and what technology can make possible.",
+  alternates: {
+    canonical: "https://lobstertechnologies.co.ke/about",
+  },
+  openGraph: {
+    title: "About Lobster Technologies — Custom Software Built for Kenya",
+    description:
+      "Meet Edwinfred Kamau and the Lobster Technologies team. We build software that fits the reality of how business is done in Kenya.",
+    url: "https://lobstertechnologies.co.ke/about",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Lobster Technologies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Lobster Technologies",
+    description:
+      "Meet the team building custom software for growing companies in Kenya.",
+    images: ["/og-image.png"],
+  },
 };
 
 const pillars = [

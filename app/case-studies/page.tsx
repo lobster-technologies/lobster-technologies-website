@@ -6,8 +6,33 @@ import Reveal from "@/components/ui/Reveal";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Lobster Technologies",
-  description: "Real software, real businesses, real results. See how Lobster Technologies has helped growing companies in Kenya.",
+  title: "Case Studies",
+  description:
+    "Real software, real businesses, real results. See how Lobster Technologies built a restaurant management system for Wendo Coffee Bistro and other growing companies in Kenya.",
+  alternates: {
+    canonical: "https://lobstertechnologies.co.ke/case-studies",
+  },
+  openGraph: {
+    title: "Case Studies — Lobster Technologies",
+    description:
+      "Real software, real businesses, real results. See how we've helped growing companies in Kenya scale with custom software.",
+    url: "https://lobstertechnologies.co.ke/case-studies",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lobster Technologies Case Studies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies — Lobster Technologies",
+    description:
+      "Real software, real businesses, real results. See how we've helped growing companies in Kenya.",
+    images: ["/og-image.png"],
+  },
 };
 
 const ArrowRight = () => (
